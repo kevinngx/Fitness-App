@@ -2,12 +2,10 @@ import 'package:fitnes_app/models/category_model.dart';
 import 'package:fitnes_app/models/diet_model.dart';
 import 'package:fitnes_app/models/popular_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -62,7 +60,7 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.only(left: 20),
           child: Text('Popular',
               style: TextStyle(
                 color: Colors.black,
@@ -155,7 +153,7 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 15,
         ),
-        Container(
+        SizedBox(
             height: 240,
             child: ListView.separated(
               itemBuilder: (context, index) {
@@ -243,7 +241,7 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 15,
         ),
-        Container(
+        SizedBox(
             height: 120,
             // color: Colors.green,
             child: ListView.separated(
@@ -308,7 +306,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(12),
               child: SvgPicture.asset("assets/icons/Search.svg"),
             ),
-            suffixIcon: Container(
+            suffixIcon: SizedBox(
               width: 100,
               child: IntrinsicHeight(
                 child: Row(
@@ -337,7 +335,7 @@ class _HomePageState extends State<HomePage> {
 
   AppBar appBar() {
     return AppBar(
-        title: const Text('MyTestApp',
+        title: const Text('Diet Tracker',
             style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,
